@@ -1,10 +1,12 @@
 package com.code.hibernateOneToOneBi.demo2.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -33,6 +35,15 @@ public class InstructorDetail {
 
     @Column(name = "hobby")
     private String hobby;
+
+    // add new fiel for instructor (also add getter/setters)
+
+    // add @OneToONE ANNOTATION
+
+    @OneToOne(mappedBy = "intructorDetail", cascade = CascadeType.ALL)
+    private Instructor instructor;
+
+
 
     public InstructorDetail() {
 
@@ -70,6 +81,14 @@ public class InstructorDetail {
     @Override
     public String toString() {
         return "InstructorDetail [id=" + id + ", youtubeChannel=" + youtubeChannel + ", hobby=" + hobby + "]";
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
     }
 
     

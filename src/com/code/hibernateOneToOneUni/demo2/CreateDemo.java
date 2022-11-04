@@ -2,9 +2,7 @@ package com.code.hibernateOneToOneUni.demo2;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-
-import com.code.hibernate.demo.entity.Student;
+import org.hibernate.cfg.Configuration; 
 import com.code.hibernateOneToOneUni.demo2.entity.Instructor;
 import com.code.hibernateOneToOneUni.demo2.entity.InstructorDetail;
 

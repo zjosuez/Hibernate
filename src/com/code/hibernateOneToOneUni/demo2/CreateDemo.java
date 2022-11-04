@@ -1,12 +1,12 @@
-package com.code.hibernate2.demo2;
+package com.code.hibernateOneToOneUni.demo2;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.code.hibernate.demo.entity.Student;
-import com.code.hibernate2.demo2.entity2.Instructor;
-import com.code.hibernate2.demo2.entity2.InstructorDetail;
+import com.code.hibernateOneToOneUni.demo2.entity.Instructor;
+import com.code.hibernateOneToOneUni.demo2.entity.InstructorDetail;
 
 public class CreateDemo {
     public static void main(String[] args) {

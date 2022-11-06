@@ -40,10 +40,16 @@ public class InstructorDetail {
 
     // add @OneToONE ANNOTATION
 
-    @OneToOne(mappedBy = "intructorDetail", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "intructorDetail", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private Instructor instructor;
 
+    public Instructor getInstructor() {
+        return instructor;
+    }
 
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
+    }
 
     public InstructorDetail() {
 
@@ -81,14 +87,6 @@ public class InstructorDetail {
     @Override
     public String toString() {
         return "InstructorDetail [id=" + id + ", youtubeChannel=" + youtubeChannel + ", hobby=" + hobby + "]";
-    }
-
-    public Instructor getInstructor() {
-        return instructor;
-    }
-
-    public void setInstructor(Instructor instructor) {
-        this.instructor = instructor;
     }
 
     

@@ -1,5 +1,4 @@
 package com.code.hibernateOneToMany.demo2.entity;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,63 +10,69 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "course")
+@Table(name="course")
 public class Course {
-    
-    // degine our fields
 
-    // define constructors
+	// define our fields
+	
+	// define constructors
+	
+	// define getter setters
+	
+	// define tostring
+	
+	// annotate fields
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="title")
+	private String title;
+	
+	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+						 CascadeType.DETACH, CascadeType.REFRESH})
+	@JoinColumn(name="instructor_id")
+	private Instructor instructor;
+	
+	public Course() {
+		
+	}
 
-    // define getter/setters
+	public Course(String title) {
+		this.title = title;
+	}
 
-    // define toString
+	public int getId() {
+		return id;
+	}
 
-    // annotate fields
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    @Column(name = "title")
-    private String title;
+	public String getTitle() {
+		return title;
+	}
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "instructor_id")
-    private Instructor instructor;
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-    public Course(String title) {
-        this.title = title;
-    }
+	public Instructor getInstructor() {
+		return instructor;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public void setInstructor(Instructor instructor) {
+		this.instructor = instructor;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Instructor getInstructor() {
-        return instructor;
-    }
-
-    public void setInstructor(Instructor instructor) {
-        this.instructor = instructor;
-    }
-
-    @Override
-    public String toString() {
-        return "Course [id=" + id + ", title=" + title + ", instructor=" + instructor + "]";
-    }
-
-    
-
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", title=" + title + "]";
+	}
+	
+	
 }
+
